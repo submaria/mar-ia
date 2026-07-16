@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MarIA — Pergunte sobre a palestra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #12141c;
+    --surface: #1b1e29;
+    --surface-2: #232739;
+    --text: #ecedf2;
+    --muted: #9098ac;
+    --accent-warm: #ff8f5e;
+    --accent-cool: #59e6c9;
+    --border: #2c3040;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 20px 56px;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-cool);
+    margin-bottom: 14px;
+  }
+
+  .logotipo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(48px, 14vw, 72px);
+    line-height: 1;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .logotipo .ia {
+    color: var(--accent-warm);
+    text-shadow: 0 0 24px rgba(255, 143, 94, 0.45);
+  }
+
+  .tagline {
+    color: var(--muted);
+    font-size: 16px;
+    margin: 0 0 28px;
+    max-width: 46ch;
+  }
+
+  .trace {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    height: 14px;
+    margin: -6px 0 28px;
+  }
+  .trace path {
+    fill: none;
+    stroke: var(--accent-cool);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: desenhar 1.4s ease-out 0.3s forwards;
+    opacity: 0.7;
+  }
+  @keyframes desenhar { to { stroke-dashoffset: 0; } }
+
+  .card-palestrante {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    margin-bottom: 32px;
+  }
+
+  .card-palestrante dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 16px;
+    margin: 0 0 14px;
+  }
+
+  .card-palestrante dt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    align-self: center;
+  }
+
+  .card-palestrante dd {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .card-palestrante p {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 14.5px;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+  }
+
+  .chat-secao h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .chat-secao h2::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-cool);
+    box-shadow: 0 0 8px var(--accent-cool);
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .chip {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 12.5px;
+    font-family: 'Inter', sans-serif;
+    padding: 7px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+  .chip:hover, .chip:focus-visible { border-color: var(--accent-cool); }
+
+  .painel-chat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  #mensagens {
+    height: 360px;
+    overflow-y: auto;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .bolha {
+    max-width: 84%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14.5px;
+  }
+  .bolha p { margin: 0; white-space: pre-wrap; }
+
+  .bolha--maria {
+    align-self: flex-start;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-top-left-radius: 3px;
+  }
+
+  .bolha--usuario {
+    align-self: flex-end;
+    background: var(--accent-warm);
+    color: #1a1208;
+    border-top-right-radius: 3px;
+  }
+
+  .bolha--digitando { display: flex; gap: 4px; padding: 14px; align-items: center; }
+  .bolha--digitando span {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--muted);
+    animation: pulsar 1s infinite ease-in-out;
+  }
+  .bolha--digitando span:nth-child(2) { animation-delay: 0.15s; }
+  .bolha--digitando span:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes pulsar { 0%,80%,100% { opacity: 0.3; } 40% { opacity: 1; } }
+
+  #form-chat {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  #input-pergunta {
+    flex: 1;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 14px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+  }
+  #input-pergunta:focus-visible {
+    outline: 2px solid var(--accent-cool);
+    outline-offset: 1px;
+  }
+  #input-pergunta:disabled { opacity: 0.6; }
+
+  #form-chat button {
+    background: var(--accent-warm);
+    color: #1a1208;
+    border: none;
+    border-radius: 10px;
+    padding: 0 18px;
+    font-weight: 600;
+    font-size: 14.5px;
+    cursor: pointer;
+  }
+  #form-chat button:hover { filter: brightness(1.06); }
+  #form-chat button:focus-visible { outline: 2px solid var(--accent-cool); outline-offset: 2px; }
+
+  footer {
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .trace path { animation: none; stroke-dashoffset: 0; }
+    .bolha--digitando span { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="eyebrow">encerramento da palestra · inteligência artificial</div>
+    <h1 class="logotipo">Mar<span class="ia">IA</span></h1>
+    <svg class="trace" viewBox="0 0 260 14" aria-hidden="true">
+      <path d="M2 7 L60 7 L72 2 L84 12 L96 7 L258 7" />
+    </svg>
+    <p class="tagline">Pergunte qualquer coisa sobre a palestra de hoje. Ela responde com base no que foi apresentado.</p>
+
+    <section class="card-palestrante" aria-label="Sobre o palestrante">
+      <dl>
+        <dt>Nome</dt><dd id="sp-nome"></dd>
+        <dt>Formação</dt><dd id="sp-formacao"></dd>
+        <dt>Escola</dt><dd id="sp-escola"></dd>
+        <dt>Hoje</dt><dd id="sp-atuacao"></dd>
+      </dl>
+      <p id="sp-bio"></p>
+    </section>
+
+    <section class="chat-secao">
+      <h2>Converse com a MarIA</h2>
+      <div class="chips" id="chips"></div>
+
+      <div class="painel-chat">
+        <div id="mensagens"></div>
+        <form id="form-chat">
+          <input id="input-pergunta" type="text" placeholder="Digite sua pergunta..." autocomplete="off" />
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>MarIA é uma IA generativa alimentada pelo conteúdo desta palestra.</footer>
+  </div>
+
+  <script src="conteudo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
