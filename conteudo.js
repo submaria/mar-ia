@@ -11,7 +11,7 @@ const SOBRE_PALESTRANTE = {
 
 // Frases de abertura que a MarIA usa ao cumprimentar (uma é escolhida ao acaso)
 const SAUDACOES = [
-  "Oi! Eu sou a MarIA — pode perguntar qualquer coisa sobre a palestra de hoje 🤖",
+  "Olá! Eu sou a MarIA — pode perguntar qualquer coisa sobre a palestra de hoje 🤖",
   "E aí! Sou a MarIA, a parte 'IA' do nome já entrega quem eu sou. Manda a pergunta!",
   "Oi, tudo bem? Fui treinada com tudo que rolou na palestra de hoje. O que você quer saber?",
 ];
