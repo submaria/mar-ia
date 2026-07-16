@@ -2,11 +2,11 @@
 // Edite os valores à direita dos dois pontos.
 
 const SOBRE_PALESTRANTE = {
-  nome: "[SEU NOME]",
-  formacao: "Técnico em [SUA ÁREA] — turma de [ANO]",
-  escola: "[NOME DA ESCOLA]",
-  atuacaoAtual: "[O QUE VOCÊ FAZ HOJE, em uma frase]",
-  bio: "[2-3 frases contando sua trajetória desde a escola até hoje]",
+  nome: "Maria Luiza Alves da Silva Machado",
+  formacao: "Técnico em Informática — turma de 2021",
+  escola: "Colégio Univap",
+  atuacaoAtual: "Hoje trabalho como Analista Programadora SQL Pleno, criando soluções que usam dados para ajudar empresas a tomar decisões.",
+  bio: "Comecei estudando no curso técnico em Informática e logo consegui meu primeiro estágio na área. Com o tempo fui crescendo profissionalmente, me formei em Ciência da Computação e hoje trabalho com bancos de dados e inteligência artificial, aplicando a tecnologia para resolver problemas do dia a dia.",
 };
 
 // Frases de abertura que a MarIA usa ao cumprimentar (uma é escolhida ao acaso)
