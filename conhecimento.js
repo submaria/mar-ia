@@ -19,7 +19,7 @@ module.exports.PALESTRA_CONTEUDO = `
 
 Nome: Maria Luiza Alves da Silva Machado
 
-Formação: Técnica em Informática, formada em 2021 pela Univap CTI. Bacharela em Ciência da Computação e atualmente cursando MBA em Inteligência Artificial e Data Analytics.
+Formação: Técnica em Informática, formada em 2021 pela Univap CTI. Bacharela em Ciência da Computação pela UNIP e atualmente cursando MBA em Inteligência Artificial e Data Analytics pela USP.
 
 Atuação hoje: Analista Programadora SQL. Trabalho com banco de dados, SQL Server, análise de dados, integrações entre sistemas e otimização de consultas. Também estudo Inteligência Artificial aplicada a dados e visão computacional.
 
