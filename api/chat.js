@@ -66,7 +66,7 @@ module.exports = async function handler(req, res) {
       const detalhe = await resposta.text();
       console.error("Erro da Groq:", resposta.status, detalhe);
       res.status(502).json({
-        error: "A MarIA não conseguiu pensar em uma resposta agora. Tente de novo em alguns segundos.",
+        error: "A MarIA não conseguiu pensar em uma resposta agora. Tenta de novo em alguns segundos.",
       });
       return;
     }
@@ -75,10 +75,10 @@ module.exports = async function handler(req, res) {
     const texto = dados?.choices?.[0]?.message?.content?.trim();
 
     res.status(200).json({
-      resposta: texto || "Desculpa, não consegui formular uma resposta agora. Tente reformular a pergunta?",
+      resposta: texto || "Desculpa, não consegui formular uma resposta agora. Tenta reformular a pergunta?",
     });
   } catch (erro) {
     console.error("Erro inesperado:", erro);
-    res.status(500).json({ error: "Algo deu errado no servidor. Tente de novo." });
+    res.status(500).json({ error: "Algo deu errado no servidor. Tenta de novo." });
   }
 };
