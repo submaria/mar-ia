@@ -251,6 +251,114 @@
     text-align: center;
   }
 
+  /* ---- Redes sociais ---- */
+  .redes {
+    display: flex;
+    gap: 10px;
+    margin: -4px 0 32px;
+  }
+  .rede {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .rede:hover { border-color: var(--accent-cool); transform: translateY(-1px); }
+  .rede svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  /* ---- Abas ---- */
+  .abas-nav {
+    display: flex;
+    gap: 4px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px;
+    margin-bottom: 22px;
+  }
+  .aba-botao {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    padding: 9px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .aba-botao:hover { color: var(--text); }
+  .aba-botao[aria-selected="true"] {
+    background: var(--accent-warm);
+    color: #1a1208;
+  }
+  .aba-painel { display: none; }
+  .aba-painel.ativa { display: block; }
+
+  /* ---- Galeria de fotos ---- */
+  .galeria {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .galeria figure {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .galeria img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--surface-2);
+  }
+  .galeria figcaption {
+    padding: 10px 12px;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  /* ---- Aba de cursos ---- */
+  .card-cursos {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 22px;
+    text-align: center;
+  }
+  .card-cursos p {
+    color: var(--muted);
+    font-size: 14.5px;
+    max-width: 40ch;
+    margin: 0 auto 18px;
+  }
+  .botao-cursos {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-cool);
+    color: #082620;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14.5px;
+    padding: 11px 20px;
+    border-radius: 10px;
+  }
+  .botao-cursos:hover { filter: brightness(1.05); }
+
   @media (prefers-reduced-motion: reduce) {
     .trace path { animation: none; stroke-dashoffset: 0; }
     .bolha--digitando span { animation: none; }
@@ -260,7 +368,7 @@
 <body>
   <div class="wrap">
 
-    <div class="eyebrow">encerramento da palestra · inteligência artificial</div>
+    <div class="eyebrow">dúvidas sobre a palestra · inteligência artificial</div>
     <h1 class="logotipo">Mar<span class="ia">IA</span></h1>
     <svg class="trace" viewBox="0 0 260 14" aria-hidden="true">
       <path d="M2 7 L60 7 L72 2 L84 12 L96 7 L258 7" />
@@ -277,16 +385,37 @@
       <p id="sp-bio"></p>
     </section>
 
-    <section class="chat-secao">
-      <h2>Converse com a MarIA</h2>
-      <div class="chips" id="chips"></div>
+    <div class="redes" id="redes"></div>
 
-      <div class="painel-chat">
-        <div id="mensagens"></div>
-        <form id="form-chat">
-          <input id="input-pergunta" type="text" placeholder="Digite sua pergunta..." autocomplete="off" />
-          <button type="submit">Enviar</button>
-        </form>
+    <div class="abas-nav" role="tablist" aria-label="Seções do site">
+      <button class="aba-botao" role="tab" aria-selected="true" data-aba="chat">Chat</button>
+      <button class="aba-botao" role="tab" aria-selected="false" data-aba="trajetoria">Trajetória</button>
+      <button class="aba-botao" role="tab" aria-selected="false" data-aba="cursos">Cursos</button>
+    </div>
+
+    <section class="aba-painel ativa" id="painel-chat" role="tabpanel">
+      <div class="chat-secao">
+        <h2>Converse com a MarIA</h2>
+        <div class="chips" id="chips"></div>
+
+        <div class="painel-chat">
+          <div id="mensagens"></div>
+          <form id="form-chat">
+            <input id="input-pergunta" type="text" placeholder="Digite sua pergunta..." autocomplete="off" />
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="aba-painel" id="painel-trajetoria" role="tabpanel">
+      <div class="galeria" id="galeria"></div>
+    </section>
+
+    <section class="aba-painel" id="painel-cursos" role="tabpanel">
+      <div class="card-cursos">
+        <p id="texto-cursos"></p>
+        <a class="botao-cursos" id="link-cursos" href="#" target="_blank" rel="noopener">Acessar pasta de cursos →</a>
       </div>
     </section>
 

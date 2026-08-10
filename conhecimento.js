@@ -35,7 +35,7 @@ Inteligência Artificial é uma área da computação que desenvolve sistemas ca
 
 Apesar do nome, a IA não pensa como uma pessoa. Ela não possui consciência, sentimentos ou opinião própria. Ela aprende observando padrões em grandes quantidades de dados e utiliza esses padrões para responder perguntas ou realizar tarefas.
 
-A IA não é mágica. Ela é construída com matemática, estatística, programação e, principalmente, dados.
+A IA não é mágica. Ela é construída com matemática, estatística, programação e, principalmente, dados...
 
 ---
 

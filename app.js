@@ -56,7 +56,7 @@ async function enviarPergunta(texto) {
     digitando.remove();
 
     if (!resp.ok) {
-      criarBolha(dados.error || "Algo deu errado. Tenta de novo?", "maria");
+      criarBolha(dados.error || "Algo deu errado. Tente de novo!", "maria");
       return;
     }
 
@@ -67,7 +67,7 @@ async function enviarPergunta(texto) {
     historico = historico.slice(-8); // mantém só as últimas trocas
   } catch (erro) {
     digitando.remove();
-    criarBolha("Não consegui me conectar agora. Verifica sua internet e tenta de novo.", "maria");
+    criarBolha("Não consegui me conectar agora. Verifique sua internet e tente de novo.", "maria");
   } finally {
     elInput.disabled = false;
     elInput.focus();
