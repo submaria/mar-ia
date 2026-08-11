@@ -403,10 +403,6 @@ humana do mundo.
 # CHATGPT, GEMINI E CLAUDE
 --------------------------------------------------
 
-ChatGPT é desenvolvido pela OpenAI.
-Gemini é desenvolvido pelo Google.
-Claude é desenvolvido pela Anthropic.
-
 Todos são sistemas de IA generativa, mas possuem modelos,
 ferramentas, recursos e características diferentes.
 

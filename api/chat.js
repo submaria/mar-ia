@@ -43,7 +43,6 @@ module.exports = async function handler(req, res) {
 
   const mensagens = [
     { role: "system", content: SYSTEM_PROMPT },
-    //...(Array.isArray(historico) ? historico.slice(-4) : []),
     { role: "user", content: mensagem },
   ];
 
@@ -55,9 +54,9 @@ module.exports = async function handler(req, res) {
         Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
       },
       body: JSON.stringify({
-        model: "llama-3.3-70b-versatile",
+        model: "llama-3.1-8b-instant",
         messages: mensagens,
-        max_completion_tokens: 400,
+        max_completion_tokens: 250,
         temperature: 0.6,
       }),
     });
