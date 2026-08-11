@@ -92,8 +92,9 @@ function montarChips() {
 
 function montarSobrePalestrante() {
   document.getElementById("sp-nome").textContent = SOBRE_PALESTRANTE.nome;
-  document.getElementById("sp-formacao").textContent = SOBRE_PALESTRANTE.formacao;
-  document.getElementById("sp-escola").textContent = SOBRE_PALESTRANTE.escola;
+  document.getElementById("sp-tecnico").textContent = SOBRE_PALESTRANTE.tecnico;
+  document.getElementById("sp-bacharel").textContent = SOBRE_PALESTRANTE.bacharel;
+  document.getElementById("sp-pos").textContent = SOBRE_PALESTRANTE.pos;
   document.getElementById("sp-atuacao").textContent = SOBRE_PALESTRANTE.atuacaoAtual;
   document.getElementById("sp-bio").textContent = SOBRE_PALESTRANTE.bio;
 }
