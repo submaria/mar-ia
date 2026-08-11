@@ -8,7 +8,7 @@
 
 const { PALESTRA_CONTEUDO } = require("../conhecimento.js");
 
-const NOME_PALESTRANTE = "Maria Luiza"; // ajuste se quiser, ou deixe como está
+const NOME_PALESTRANTE = "Maria Luiza";
 
 const SYSTEM_PROMPT = `Você é a MarIA — um nome que brinca com "Maria" + "IA". Você é a assistente que encerra a palestra sobre Inteligência Artificial de ${NOME_PALESTRANTE}, apresentada para alunos de uma escola técnica.
 
