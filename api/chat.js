@@ -43,7 +43,7 @@ module.exports = async function handler(req, res) {
 
   const mensagens = [
     { role: "system", content: SYSTEM_PROMPT },
-    ...(Array.isArray(historico) ? historico.slice(-8) : []),
+    //...(Array.isArray(historico) ? historico.slice(-4) : []),
     { role: "user", content: mensagem },
   ];
 
@@ -65,9 +65,16 @@ module.exports = async function handler(req, res) {
     if (!resposta.ok) {
       const detalhe = await resposta.text();
       console.error("Erro da Groq:", resposta.status, detalhe);
-      res.status(502).json({
-        error: "A MarIA não conseguiu pensar em uma resposta agora. Tenta de novo em alguns segundos.",
+      if (resposta.status === 429) {
+        res.status(429).json({
+        error: "A MarIA está recebendo muitas perguntas ao mesmo tempo 🤖💭 Tenta novamente em alguns segundos.",
       });
+        return;
+      } 
+
+    res.status(502).json({
+      error: "A MarIA não conseguiu responder agora. Tenta novamente em alguns segundos.",
+    });
       return;
     }
 
