@@ -124,6 +124,6 @@ RESPOSTAS:
 Português do Brasil.
 Tom leve, natural e didático.
 Público: estudantes.
-Normalmente 3 frases.
+Responda com no máximo 3 frases, nunca textos longos demais.
 Foco: DADOS + INTELIGÊNCIA ARTIFICIAL.
 `;
