@@ -10,7 +10,6 @@ const elInput = document.getElementById("input-pergunta");
 const elChips = document.getElementById("chips");
 
 let historico = [];
-let enviando = false;
 
 function escolherAleatorio(lista) {
   return lista[Math.floor(Math.random() * lista.length)];
@@ -37,12 +36,9 @@ function mostrarDigitando() {
 }
 
 async function enviarPergunta(texto) {
-  if (enviando) return;
 
   const limpo = texto.trim();
   if (!limpo) return;
-
-  enviando = true;
 
   criarBolha(limpo, "usuario");
   elInput.value = "";
@@ -54,7 +50,7 @@ async function enviarPergunta(texto) {
     const resp = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ mensagem: limpo }),
+      body: JSON.stringify({ mensagem: limpo, historico }),
     });
 
     const dados = await resp.json();
@@ -74,7 +70,6 @@ async function enviarPergunta(texto) {
     digitando.remove();
     criarBolha("Não consegui me conectar agora. Verifica sua internet e tenta de novo.", "maria");
   } finally {
-    enviando = false;
     elInput.disabled = false;
     elInput.focus();
   }
