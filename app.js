@@ -54,7 +54,7 @@ async function enviarPergunta(texto) {
     const resp = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ mensagem: limpo, historico }),
+      body: JSON.stringify({ mensagem: limpo }),
     });
 
     const dados = await resp.json();
@@ -74,6 +74,7 @@ async function enviarPergunta(texto) {
     digitando.remove();
     criarBolha("Não consegui me conectar agora. Verifica sua internet e tenta de novo.", "maria");
   } finally {
+    enviando = false;
     elInput.disabled = false;
     elInput.focus();
   }
