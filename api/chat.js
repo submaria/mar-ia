@@ -1,11 +1,3 @@
-// ===========================================================
-// FUNÇÃO DE SERVIDOR — não precisa editar este arquivo.
-// Ela recebe a pergunta do aluno, junta com o conteúdo da
-// palestra (conhecimento.js) e pergunta pra Groq.
-// A chave de API (GROQ_API_KEY) nunca aparece no navegador do
-// aluno — ela fica configurada só aqui, na Vercel.
-// ===========================================================
-
 const { PALESTRA_CONTEUDO } = require("../conhecimento.js");
 
 const SYSTEM_PROMPT = `Você é a MarIA — um nome que brinca com "Maria" + "IA". Você é a assistente que encerra a palestra sobre Inteligência Artificial de Maria Luiza, apresentada para alunos da UNIVAP.

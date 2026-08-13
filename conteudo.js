@@ -1,5 +1,3 @@
-// Informações que aparecem no cartão do topo da página.
-
 const SOBRE_PALESTRANTE = {
   nome: "Maria Luiza Alves da Silva Machado",
   tecnico: "Técnico em Informática - Colégio Univap - 2021",
@@ -9,36 +7,32 @@ const SOBRE_PALESTRANTE = {
   bio: "Comecei estudando no curso técnico em Informática e logo consegui meu primeiro estágio na área. Com o tempo fui crescendo profissionalmente, me formei em Ciência da Computação e hoje trabalho com bancos de dados e inteligência artificial, aplicando a tecnologia para resolver problemas do dia a dia.",
 };
 
-// Frases de abertura que a MarIA usa ao cumprimentar (uma é escolhida ao acaso)
+
 const SAUDACOES = [
-  "Olá, eu sou a MarIA! Pode perguntar qualquer coisa sobre a palestra de hoje 🤖",
+  "Olá, eu sou a MarIA! Pode perguntar qualquer coisa sobre a palestra 🤖",
   "E aí! Sou a MarIA, a parte 'IA' do nome já entrega quem eu sou. Mande sua pergunta!",
-  "Oi, tudo bem? Fui treinada com tudo que rolou na palestra de hoje. O que você quer saber?",
+  "Oii, tudo bem? Sou a MarIA e fui treinada com tudo que rolou na palestra de hoje. O que você quer saber?",
 ];
 
-// Sugestões de perguntas mostradas como botões (chips)
+
 const PERGUNTAS_SUGERIDAS = [
   "A IA realmente entende o que eu escrevo?",
   "Como o Instagram sabe o que eu vou gostar?",
   "A IA vai substituir os programadores?",
   "Como uma IA aprende?",
   "Por que uma IA pode inventar informações?",
-  "Explique IA generativa para alguém que nunca teve contato com o tema."
+  "Explique IA generativa para alguém que nunca teve contato."
 ];
  
-// ---- Redes sociais ----
 const REDES_SOCIAIS = [
   { nome: "Instagram", url: "https://instagram.com/submaria.jpeg" },
   { nome: "LinkedIn", url: "https://linkedin.com/in/marialuizamachado" },
   { nome: "GitHub", url: "https://github.com/submaria" },
 ];
 
-// ---- Link da pasta com cursos gratuitos ----
 const LINK_CURSOS = "https://drive.google.com/drive/folders/1KTt2ZmPRHqpoo_Te8Bvw475EV-iMPy_n?usp=sharing";
 const TEXTO_CURSOS = "Reuni um drive com cursos gratuitos de tecnologia que eu recomendo! Clique abaixo para acessar.";
 
-// ---- Fotos da trajetória ----
-// Cada foto precisa de um "src" (caminho do arquivo de imagem) e uma "legenda".
 const FOTOS_TRAJETORIA = [
   { src: "fotos/feira_tecnica.jpeg", legenda: "Feira Técnica - 2019" },
   { src: "fotos/jogo_feira.png", legenda: "Jogo Feira Técnica - 2019" },

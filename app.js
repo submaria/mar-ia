@@ -1,9 +1,3 @@
-// ===========================================================
-// INTERFACE DO CHAT — não precisa editar este arquivo.
-// Ele manda a pergunta do aluno para /api/chat e mostra a
-// resposta que voltar de lá.
-// ===========================================================
-
 const elMensagens = document.getElementById("mensagens");
 const elForm = document.getElementById("form-chat");
 const elInput = document.getElementById("input-pergunta");
@@ -65,7 +59,7 @@ async function enviarPergunta(texto) {
 
     historico.push({ role: "user", content: limpo });
     historico.push({ role: "assistant", content: dados.resposta });
-    historico = historico.slice(-8); // mantém só as últimas trocas
+    historico = historico.slice(-8);
   } catch (erro) {
     digitando.remove();
     criarBolha("Não consegui me conectar agora. Verifica sua internet e tenta de novo.", "maria");
@@ -100,7 +94,7 @@ function montarSobrePalestrante() {
   document.getElementById("sp-bio").textContent = SOBRE_PALESTRANTE.bio;
 }
 
-// Ícones simples em SVG para cada rede social conhecida
+
 const ICONES_REDES = {
   Instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>',
   LinkedIn: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C3.34 3.5 2 4.84 2 6.48s1.34 2.98 2.98 2.98 2.98-1.34 2.98-2.98S6.62 3.5 4.98 3.5zM2.4 21.5h5.16V9.75H2.4V21.5zM9.5 9.75h4.94v1.6h.07c.69-1.3 2.37-2.67 4.88-2.67 5.22 0 6.19 3.43 6.19 7.9v7.92h-5.16v-7.02c0-1.68-.03-3.83-2.34-3.83-2.34 0-2.7 1.83-2.7 3.71v7.14H9.5V9.75z"/></svg>',
