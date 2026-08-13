@@ -1,3 +1,4 @@
+/*
 module.exports.PALESTRA_CONTEUDO = `
 PALESTRA:
 "Do SQL à Inteligência Artificial: como os dados viram decisões"
@@ -126,4 +127,38 @@ Tom leve, natural e didático.
 Público: estudantes.
 Responda com no máximo 3 frases, nunca textos longos demais.
 Foco: DADOS + INTELIGÊNCIA ARTIFICIAL.
+`;*/
+
+const PALESTRA_CONTEUDO = `
+PALESTRA: "Do SQL à Inteligência Artificial: como os dados viram decisões"
+
+PONTOS PRINCIPAIS:
+- Dados são a base para sistemas de IA.
+- Dados podem revelar padrões e ajudar na tomada de decisões.
+- SQL é usado para consultar, organizar e transformar dados.
+- Machine Learning aprende padrões a partir de dados.
+- Deep Learning utiliza redes neurais profundas.
+- IA generativa cria conteúdos como textos, imagens, áudio, vídeo e código.
+- ChatGPT, Gemini e Claude são exemplos de IA generativa.
+- Sistemas de recomendação analisam comportamentos para prever interesses.
+- IA pode errar e gerar informações falsas que parecem verdadeiras. Isso é chamado de alucinação.
+- É importante verificar informações produzidas por IA.
+- Um bom prompt fornece contexto, objetivo e instruções claras.
+- ANI é a IA especializada em tarefas específicas e é o tipo de IA existente atualmente.
+- AGI e ASI são conceitos hipotéticos.
+- IA não elimina a necessidade de pensamento crítico e conhecimento humano.
+- O futuro envolve colaboração entre pessoas e sistemas de IA.
+
+TCC DA PALESTRANTE:
+- Sistema automatizado para cálculo do ângulo de Cobb usando IA.
+- Utilizou YOLOv8 Pose e técnicas de visão computacional.
+- Precision: 92%.
+- Recall: 94%.
+- mAP@50: 96,5%.
+- MAE: 5,65 graus.
+
+SOBRE A PALESTRANTE:
+- Maria Luiza.
+- Analista Programadora SQL Pleno.
+- Atua com dados, SQL, integrações e tecnologia.
 `;
