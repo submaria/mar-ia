@@ -129,8 +129,9 @@ Responda com no máximo 3 frases, nunca textos longos demais.
 Foco: DADOS + INTELIGÊNCIA ARTIFICIAL.
 `;*/
 
-const PALESTRA_CONTEUDO = `
-PALESTRA: "Do SQL à Inteligência Artificial: como os dados viram decisões"
+module.exports.PALESTRA_CONTEUDO = `
+PALESTRA:
+"Do SQL à Inteligência Artificial: como os dados viram decisões"
 
 PONTOS PRINCIPAIS:
 - Dados são a base para sistemas de IA.
