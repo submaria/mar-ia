@@ -9,7 +9,8 @@ const elForm = document.getElementById("form-chat");
 const elInput = document.getElementById("input-pergunta");
 const elChips = document.getElementById("chips");
 
-let historico = []; // guarda as últimas mensagens da conversa, pra IA ter contexto
+let historico = [];
+let enviando = false;
 
 function escolherAleatorio(lista) {
   return lista[Math.floor(Math.random() * lista.length)];
@@ -36,8 +37,12 @@ function mostrarDigitando() {
 }
 
 async function enviarPergunta(texto) {
+  if (enviando) return;
+
   const limpo = texto.trim();
   if (!limpo) return;
+
+  enviando = true;
 
   criarBolha(limpo, "usuario");
   elInput.value = "";
